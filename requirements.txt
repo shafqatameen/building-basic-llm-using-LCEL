@@ -4,3 +4,4 @@ langchain_openai
 dotenv
 langserve
 fastapi
+sse_starlette

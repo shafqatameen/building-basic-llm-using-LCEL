@@ -13,7 +13,7 @@ model=ChatGroq(model_name="openai/gpt-oss-120b",groq_api_key=groq_api_key)
 
 #create a prompt template
 system_template="translate the following text into {language}"
-prompt_template=ChatPromptTemplate.from_template(
+prompt_template=ChatPromptTemplate.from_messages(
     [
         ("system",system_template),
         ("user","{text}")    
@@ -32,4 +32,12 @@ app= FastAPI(title="Translation API",
 )
 
 ##adding chain routes
-a
+add_routes(
+    app,
+    chain,
+    path="/chain"
+)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app,host="127.0.0.1",port=8000)
