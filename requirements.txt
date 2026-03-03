@@ -5,3 +5,4 @@ dotenv
 langserve
 fastapi
 sse_starlette
+uvicorn
